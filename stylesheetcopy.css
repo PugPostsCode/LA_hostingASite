@@ -1,0 +1,335 @@
+@charset "UTF-8";
+
+/*
+Color palette:
+
+cream #FFF8e9 (255, 248, 233)
+blue #394F5E (57,79,94)
+dark orange #B94531 (185, 69, 49)
+*/
+
+/* Universal style */
+html {
+    box-sizing: border-box;
+}
+
+* {
+    box-sizing: inherit;
+}
+
+/* Nav style */
+.main_nav {
+    display: flex;
+
+    align-items: center;
+
+    list-style: none;
+
+    background-color: rgb(57, 79, 94);
+
+    padding: 0.3em;
+
+    margin: 0 auto;
+    max-width: 1280px;
+}
+
+.main_nav a {
+    color: #ffffff;
+
+    padding: 60px 40px;
+
+    text-decoration: none;
+}
+
+.main_nav a:hover {
+    background-color: #ffffff;
+    color: rgb(57, 79, 94);
+}
+
+li.logo {
+    margin-right: auto;
+}
+
+/* Hero Image & Header style */
+.hero_image {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(255, 248, 233, 0.3)), url(images/coffee_shop.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    position: relative;
+    height: 400px;
+
+    margin: 0 auto;
+    max-width: 1280px;
+}
+
+.hero_header {
+    color: #fff8e9;
+
+    text-shadow: 0.05em 0.05em 0.1em #000000;
+    text-align: center;
+
+    font-size: 3em;
+
+    position: absolute;
+    top: 40%;
+    margin: 0 20px;
+}
+
+/* Index Grid setup */
+/* default */
+#container {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto auto auto;
+    grid-template-areas:
+        "problem    problem      image1"
+        "hlight1    hlight2     hlight3"
+        "about      about       about"
+        "prod1      prod2       prod3"
+        "review     review      review"
+    ;
+
+    background-color: #fff8e9;
+
+    margin: 0 auto;
+    max-width: 1280px;
+}
+
+#problem {
+    grid-area: problem;
+
+    margin: 1em;
+}
+
+#image1 {
+    grid-area: image1;
+}
+
+#hlight1 {
+    grid-area: hlight1;
+}
+
+#hlight2 {
+    grid-area: hlight2;
+}
+
+#hlight3 {
+    grid-area: hlight3;
+}
+
+#about {
+    grid-area: about;
+}
+
+#product1 {
+    grid-area: prod1;
+}
+
+#product2 {
+    grid-area: prod2;
+}
+
+#product3 {
+    grid-area: prod3;
+}
+
+#review {
+    grid-area: review;
+}
+
+/* Menu Grid Setup */
+#menu_grid {
+    display: grid;
+
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-rows: 1fr;
+
+    gap: 15px;
+}
+
+#menu_grid * {
+    margin: 10px;
+}
+
+/* Index Grid style */
+#container * {
+    text-align: center;
+}
+
+#container div {
+    object-fit: cover;
+}
+
+#problem, #review {
+    margin: 0px, 15px, 0px, 30px;
+    padding: 30px 0px 60px 0px;
+}
+
+#hlight1, #hlight2, #hlight3 {
+    margin: 20px;
+}
+
+#product1, #product2, #product3 {
+    margin: 40px;
+}
+
+#about {
+    margin: 80px;
+}
+
+#image1 {
+    padding: 0px 0px 80px 0px;
+}
+
+/* Image Style */
+img {
+    max-width: 100%;
+}
+
+/* Menu style */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+    /* text-align: center; */
+    color: #394F5E;
+    background-color: #FFF8e9;
+
+    background-color: #B94531;
+
+    margin: 0;
+}
+
+main {
+    margin: 5px;
+}
+
+h1 {
+    font: bold 2em Times, serif;
+    color: navy /*!important*/;
+    text-shadow: .05em .05em .1em gray;
+}
+
+h2 {
+    font: bold 1.2em Times, serif;
+    text-transform: uppercase;
+    color: #B94531;
+    letter-spacing: .4em;
+}
+
+dt {
+    font-weight: bold;
+    color: #394F5E;
+}
+
+.price {
+    color: sienna;
+    font-weight: bold;
+}
+
+.favorite {
+    color: tomato;
+    font-style: italic;
+}
+
+#drinks {
+    background-color: rgba(57, 79, 94, .25);
+    border: solid;
+}
+
+#healthy {
+    background-color: rgba(185, 69, 49, .25);
+    border: solid;
+}
+
+footer {
+    color: #FFF8e9;
+    background-color: #394F5E;
+
+    padding: 20px;
+
+    margin: 0 auto;
+    max-width: 1280px;
+}
+
+/* --- MEDIA QUERIES --- */
+/* tablet screens */
+@media screen and (max-width: 1024px) {
+    body {
+        color: blue;
+        background-color: lightblue;
+    }
+
+    #container {
+        display: grid;
+    
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto auto auto auto auto auto;
+        grid-template-areas:
+            "problem    image1"
+            "hlight1    hlight1"
+            "hlight2    hlight3"
+            "about      about"
+            "prod1      prod2"
+            "prod3      prod3"
+            "review     review"
+        ;
+    
+        justify-items: center;
+
+        background-color: #fff8e9;
+    }
+
+    #problem, #review {
+        padding: 30px 0px 30px 0px;
+    }
+
+    #image1 {
+        padding: 60px 0px 60px 0px;
+    }
+}
+
+/* phone screens */
+@media screen and (max-width: 768px) {
+    body {
+        color: red;
+        background-color: pink;
+    }
+
+    #container {
+        display: grid;
+    
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto auto auto auto auto auto auto;
+        grid-template-areas:
+            "problem"
+            "image1"
+            "hlight1"
+            "hlight2"
+            "hlight3"
+            "about"
+            "prod1"
+            "prod2"
+            "prod3"
+            "review"
+        ;
+    
+        background-color: #fff8e9;
+    }
+
+    .main_nav a {
+        size: 10px;
+
+        padding: 20px 10px;
+    }
+
+    #problem, #review {
+        padding: 10px 0px 10px 0px;
+    }
+
+    #image1 {
+        padding: 10px 0px 10px 0px;
+    }
+}
